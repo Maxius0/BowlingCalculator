@@ -4,7 +4,9 @@
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Hello, World!");
+      Console.WriteLine("Welcome to the bowling calculator!");
+      Console.WriteLine("Enter a valid bowling game to get started.");
+      Console.ReadLine();
     }
   }
 }
