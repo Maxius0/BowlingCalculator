@@ -4,27 +4,29 @@
   {
     public int FirstRoll { get; set; }
     public int SecondRoll { get; set; }
+    public int? ThirdRoll { get; set; }
 
-    public BowlingFrame(string frame)
+    public BowlingFrame(int firstRoll, int secondRoll)
     {
-      FromString(frame);
+      FirstRoll = firstRoll;
+      SecondRoll = secondRoll;
     }
 
-    public int Total()
+    public BowlingFrame(int firstRoll, int secondRoll, int thirdRoll)
+    {
+      FirstRoll = firstRoll;
+      SecondRoll = secondRoll;
+      ThirdRoll = thirdRoll;
+    }
+
+    public int FrameTotal()
     { 
-      return FirstRoll + SecondRoll;
+      return FirstRoll + SecondRoll + (ThirdRoll ?? 0);
     }
 
     public override string ToString()
     {
-      return $"[{FirstRoll},{SecondRoll}]";
-    }
-
-    private void FromString(string frame)
-    {
-      string[] rolls = frame.Trim(['[', ']']).Split(',');
-      FirstRoll = int.Parse(rolls[0]);
-      SecondRoll = int.Parse(rolls[1]);
+      return $"[{FirstRoll},{SecondRoll}" + (ThirdRoll is null ? "" : $",{ThirdRoll}") + "]";
     }
   }
 }
