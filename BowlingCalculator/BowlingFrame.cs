@@ -24,6 +24,16 @@
       return FirstRoll + SecondRoll + (ThirdRoll ?? 0);
     }
 
+    public bool Strike()
+    {
+      return FirstRoll == 10;
+    }
+
+    public bool Spare()
+    {
+      return !Strike() && FrameTotal() == 10;
+    }
+
     public override string ToString()
     {
       return $"[{FirstRoll},{SecondRoll}" + (ThirdRoll is null ? "" : $",{ThirdRoll}") + "]";

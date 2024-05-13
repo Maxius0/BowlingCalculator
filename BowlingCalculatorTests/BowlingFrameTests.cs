@@ -7,7 +7,7 @@ namespace BowlingCalculatorTests
   public class BowlingFrameTests
   {
     [TestMethod]
-    public void Total_ReturnsFrameTotal()
+    public void FrameTotal_ReturnsFrameTotal()
     {
       // Arrange
       BowlingFrame frame = new BowlingFrame(1, 2);

@@ -18,7 +18,7 @@
 
       // Assert
       var frames = bowlingGame.Frames;
-      for (int i = 0; i < frames.Count(); i++)
+      for (int i = 0; i < frames.Count; i++)
       {
         Assert.AreEqual(expectedFirstRolls[i], frames[i].FirstRoll);
         Assert.AreEqual(expectedSecondRolls[i], frames[i].SecondRoll);
