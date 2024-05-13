@@ -29,11 +29,6 @@
       return FirstRoll == 10;
     }
 
-    public bool Spare()
-    {
-      return !Strike() && FrameTotal() == 10;
-    }
-
     public override string ToString()
     {
       return $"[{FirstRoll},{SecondRoll}" + (ThirdRoll is null ? "" : $",{ThirdRoll}") + "]";

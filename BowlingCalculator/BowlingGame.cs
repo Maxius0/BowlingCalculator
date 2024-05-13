@@ -24,7 +24,6 @@
     public int FrameScore(int frameNumber)
     {
       BowlingFrame currentFrame = Frames[frameNumber];
-      BowlingFrame nextFrame = Frames[frameNumber + 1];
       int score = currentFrame.FrameTotal();
 
       if (frameNumber == 10)
@@ -32,26 +31,38 @@
         return score;
       }
 
-      if (currentFrame.Spare())
+      if (currentFrame.FrameTotal() == 10)
       {
-        score += nextFrame.FirstRoll;
-      }
+        BowlingFrame nextFrame = Frames[frameNumber + 1];
 
-      if (currentFrame.Strike())
-      {
         score += nextFrame.FirstRoll;
 
-        if (nextFrame.Strike() && frameNumber < 9)
+        if (currentFrame.Strike())
         {
-          score += Frames[frameNumber + 2].FirstRoll;
-        }
-        else
-        {
-          score += nextFrame.SecondRoll;
+          if (nextFrame.Strike() && frameNumber < Frames.Count - 1)
+          {
+            score += Frames[frameNumber + 2].FirstRoll;
+          }
+          else
+          {
+            score += nextFrame.SecondRoll;
+          }
         }
       }
 
       return score;
+    }
+
+    public override string ToString()
+    {
+      string bowlingGameString = "";
+
+      for (int i = 0; i < Frames.Count; i++)
+      {
+        bowlingGameString += Frames[i].ToString();
+      }
+
+      return bowlingGameString;
     }
   }
 }
