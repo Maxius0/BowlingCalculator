@@ -2,7 +2,7 @@
 
 My solution to recruitment case by Udviklings- og Forenklingsstyrelsen. See case description [here](https://github.com/Maxius0/BowlingCalculator/blob/master/Project/UFST%20Opl%C3%A6g%20til%20programmeringsopgave.pdf).
 
-Thoughts on CI/CD setup (in Danish) can be found [here](https://github.com/Maxius0/BowlingCalculator/blob/master/Project/UFST%20Opl%C3%A6g%20til%20programmeringsopgave.pdf](https://github.com/Maxius0/BowlingCalculator/blob/master/Project/CICD.txt).
+Thoughts on CI/CD setup (in Danish) can be found [here](https://github.com/Maxius0/BowlingCalculator/blob/master/Project/UFST%20Opl%C3%A6g%20til%20programmeringsopgave.pdf](https://github.com/Maxius0/BowlingCalculator/blob/master/Project/CICD.txt)).
 
 ## Install
 
