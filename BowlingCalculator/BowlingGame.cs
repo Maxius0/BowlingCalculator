@@ -1,13 +1,8 @@
 ﻿namespace BowlingCalculator
 {
-  public class BowlingGame
+  public class BowlingGame(List<BowlingFrame> frames)
   {
-    public List<BowlingFrame> Frames;
-
-    public BowlingGame(List<BowlingFrame> frames)
-    {
-      Frames = frames;
-    }
+    public List<BowlingFrame> Frames = frames;
 
     public int GameScore()
     {

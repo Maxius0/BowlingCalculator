@@ -1,6 +1,6 @@
 ﻿namespace BowlingCalculator
 {
-  public class BowlingCalculatorUI
+  public static class BowlingCalculatorUI
   {
     const string _exampleGame = "[7,1], [0,0], [6,2], [0,5], [4,4], [4,0], [7,2], [3,2], [5,5], [1,6]";
     const string _headers = "Frame: [ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ][ 8 ][ 9 ][ 10]";

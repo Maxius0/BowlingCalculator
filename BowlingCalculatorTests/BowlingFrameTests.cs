@@ -1,7 +1,6 @@
 namespace BowlingCalculatorTests
 {
   using BowlingCalculator;
-  using NuGet.Frameworks;
 
   [TestClass]
   public class BowlingFrameTests
@@ -21,11 +20,37 @@ namespace BowlingCalculatorTests
     }
 
     [TestMethod]
-    public void ToString_ReturnsBowlingGameString()
+    public void Strike_WithStrike_ReturnsTrue()
     {
       // Arrange
-      BowlingFrame frame = new BowlingFrame(1, 2, 3);
-      string expected = "[1,2,3]";
+      BowlingFrame frame = new BowlingFrame(10, 0);
+
+      // Act
+      bool actual = frame.Strike();
+
+      // Assert
+      Assert.IsTrue(actual);
+    }
+
+    [TestMethod]
+    public void Strike_WithSpare_ReturnsFalse()
+    {
+      // Arrange
+      BowlingFrame frame = new BowlingFrame(5, 5);
+
+      // Act
+      bool actual = frame.Strike();
+
+      // Assert
+      Assert.IsFalse(actual);
+    }
+
+    [TestMethod]
+    public void ToString_ReturnsBowlingFrameString()
+    {
+      // Arrange
+      BowlingFrame frame = new BowlingFrame(1, 2);
+      string expected = "[1,2]";
 
       // Act
       string actual = frame.ToString();
