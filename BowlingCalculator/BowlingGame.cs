@@ -26,12 +26,12 @@
       BowlingFrame currentFrame = Frames[frameNumber];
       int score = currentFrame.FrameTotal();
 
-      if (frameNumber == 10)
+      if (frameNumber == Constants.FRAMES - 1)
       {
         return score;
       }
 
-      if (currentFrame.FrameTotal() == 10)
+      if (currentFrame.FrameTotal() == Constants.PINS)
       {
         BowlingFrame nextFrame = Frames[frameNumber + 1];
 

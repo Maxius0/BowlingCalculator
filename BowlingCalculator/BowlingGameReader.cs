@@ -22,12 +22,16 @@ namespace BowlingCalculator
     {
       string[] rolls = frame.Trim(['[', ']']).Split(',');
 
+      if (rolls.Length > 2)
+      {
+        return new BowlingFrame(int.Parse(rolls[0]), int.Parse(rolls[1]), int.Parse(rolls[2]));
+      }
       return new BowlingFrame(int.Parse(rolls[0]), int.Parse(rolls[1]));
     }
 
     public static bool IsValidGame(string game)
     {
-      Regex regex = new("(\\[[0-9]+,[0-9]+\\], ){9}\\[[0-9]+,[0-9]+(,[0-9])*\\]");
+      Regex regex = new("(\\[[0-9]+,[0-9]+\\], ){9}\\[[0-9]+,[0-9]+(,[0-9]+)*\\]");
       return regex.IsMatch(game);
     }
   }

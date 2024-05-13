@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace BowlingCalculator
+﻿namespace BowlingCalculator
 {
   public class BowlingCalculatorUI
   {
@@ -67,13 +65,13 @@ namespace BowlingCalculator
           case "t":
             Console.WriteLine("Total score for this game: " + bowlingGame.GameScore());
             break;
-          case string when int.TryParse(input, out int frameNumber) && frameNumber <= 10:
+          case string when int.TryParse(input, out int frameNumber) && frameNumber <= Constants.FRAMES:
             Console.WriteLine($"Score for round {frameNumber}: {bowlingGame.FrameScore(frameNumber-1)}");
             break;
           case "all":
             string frameScores = "";
             
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < Constants.FRAMES; i++)
             {
               frameScores += "[ " + bowlingGame.FrameScore(i) + (bowlingGame.FrameScore(i) < 10 ? " " : "") + "]";
             }

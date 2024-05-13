@@ -26,7 +26,7 @@
 
     public bool Strike()
     {
-      return FirstRoll == 10;
+      return FirstRoll == Constants.PINS;
     }
 
     public override string ToString()
