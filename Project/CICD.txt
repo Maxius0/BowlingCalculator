@@ -1,0 +1,5 @@
+Skitsering af CI/CD:
+- Da min kodebase allerede ligger i GitHub ville det være oplagt at bruge GitHub Actions.
+- Under Actions ville jeg vælge det prædefinerede workflow .NET Dekstop til automatisk build og test (CI).
+- Herefter ville jeg overveje hvor jeg skulle deploye til. Det kunne for eksempel være en Azure Web App.
+- Igen har Github Actions et prædefineret workflow til dette (altså automatisk deploy til Azure Web App), som man kunne tage udgangspunkt i.
