@@ -52,10 +52,11 @@
     {
       string bowlingGameString = "";
 
-      for (int i = 0; i < Frames.Count; i++)
+      for (int i = 0; i < Frames.Count - 1; i++)
       {
-        bowlingGameString += Frames[i].ToString();
+        bowlingGameString += Frames[i].ToString() + "|";
       }
+      bowlingGameString += Frames.Last().ToString();
 
       return bowlingGameString;
     }

@@ -2,8 +2,8 @@
 {
   public static class BowlingCalculatorUI
   {
-    const string _exampleGame = "[7,1], [0,0], [6,2], [0,5], [4,4], [4,0], [7,2], [3,2], [5,5], [1,6]";
-    const string _headers = "Frame: [ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ][ 8 ][ 9 ][ 10]";
+    const string _exampleGame = "[7,1]|[0,0]|[6,2]|[0,5]|[4,4]|[4,0]|[7,2]|[3,2]|[5,5]|[1,6]";
+    const string _headers = "Frame: [ 1 ]|[ 2 ]|[ 3 ]|[ 4 ]|[ 5 ]|[ 6 ]|[ 7 ]|[ 8 ]|[ 9 ]|[ 10]";
 
     public static void Start()
     {
@@ -65,7 +65,7 @@
           case "t":
             Console.WriteLine("Total score for this game: " + bowlingGame.GameScore());
             break;
-          case string when int.TryParse(input, out int frameNumber) && frameNumber <= Constants.FRAMES:
+          case string when int.TryParse(input, out int frameNumber) && frameNumber <= Constants.FRAMES && frameNumber > 0:
             Console.WriteLine($"Score for round {frameNumber}: {bowlingGame.FrameScore(frameNumber-1)}");
             break;
           case "all":
@@ -73,7 +73,16 @@
             
             for (int i = 0; i < Constants.FRAMES; i++)
             {
-              frameScores += "[ " + bowlingGame.FrameScore(i) + (bowlingGame.FrameScore(i) < 10 ? " " : "") + "]";
+              frameScores += "[ " + bowlingGame.FrameScore(i);
+              if (bowlingGame.FrameScore(i) < 10)
+              {
+                frameScores += " ";
+              }
+              frameScores += "]";
+              if (i < Constants.FRAMES - 1)
+              {
+                frameScores += "|";
+              }
             }
 
             Console.WriteLine(_headers);

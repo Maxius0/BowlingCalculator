@@ -6,7 +6,7 @@ namespace BowlingCalculator
   {
     public BowlingGame ReadGame(string game)
     {
-      string[] frameStrings = game.Split(", ");
+      string[] frameStrings = game.Split("|");
       List<BowlingFrame> frames = [];
 
       foreach (string frameString in frameStrings)
@@ -18,7 +18,7 @@ namespace BowlingCalculator
       return new BowlingGame(frames);
     }
 
-    private BowlingFrame ReadFrame(string frame) 
+    private static BowlingFrame ReadFrame(string frame) 
     {
       string[] rolls = frame.Trim(['[', ']']).Split(',');
 
@@ -31,7 +31,7 @@ namespace BowlingCalculator
 
     public static bool IsValidGame(string game)
     {
-      Regex regex = new("(\\[[0-9]+,[0-9]+\\], ){9}\\[[0-9]+,[0-9]+(,[0-9]+)*\\]");
+      Regex regex = new("^(\\[(10|[0-9]),(10|[0-9])\\]\\|){9}\\[(10|[0-9]),(10|[0-9])(,(10|[0-9]))?\\]$");
       return regex.IsMatch(game);
     }
   }
