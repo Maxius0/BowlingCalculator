@@ -13,7 +13,7 @@
 
       while (true)
       {
-        Console.WriteLine("Please enter a valid bowling game to get started. (Or \"ex\" to see an example; \"q\" to quit.)");
+        Console.WriteLine("Please enter a valid bowling game to get started. (Or \"ex\" to get an example; \"q\" to quit.)");
         input = Console.ReadLine();
 
         switch (input)
@@ -45,12 +45,13 @@
       Console.WriteLine("Your game:");
       Console.WriteLine(_headers);
       Console.WriteLine("Pins:  " + bowlingGame);
-      Console.WriteLine("Enter \"t\" to see total score; frame# (1-10) to see score for that frame; \"all\" to see score for every frame; \"r\" to restart; or \"q\" to quit");
 
       string? input;
 
       while (true)
       {
+        Console.WriteLine("Enter \"t\" to see total score; frame# (1-10) to see score for that frame; \"all\" to see score for every frame; \"r\" to restart; or \"q\" to quit.");
+
         input = Console.ReadLine();
 
         switch (input)
